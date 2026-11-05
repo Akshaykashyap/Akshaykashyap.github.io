@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akshay Kashyap | Senior Drupal Front-End Developer</title>
+<meta name="description" content="Senior Drupal Front-End Developer with 6+ years of experience building responsive, accessible, high-performance websites on Drupal 8/9/10/11 and WordPress.">
+<meta name="theme-color" content="#0b5cff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Akshay Kashyap | Senior Drupal Front-End Developer">
+<meta property="og:description" content="Custom Drupal themes, Twig, Pattern Lab and pixel-perfect front-ends. 10+ Drupal projects delivered.">
+<meta property="og:url" content="https://akshaykashyap.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b5cff'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --ink:#101828; --muted:#5b6478; --line:#e2e6ef;
+  --accent:#0b5cff; --accent-ink:#ffffff; --accent-soft:#e8f0ff; --warm:#ff6a3d;
+  --code-bg:#0e1626; --code-ink:#d6e2ff; --code-dim:#7d8db3; --code-key:#7fb0ff; --code-str:#ffc58a; --code-var:#8be0c0;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+  --radius:14px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a0f1c; --surface:#111a2e; --ink:#eef2fb; --muted:#9aa6c0; --line:#22304d;
+    --accent:#5b8dff; --accent-ink:#06102a; --accent-soft:#16254a; --warm:#ff8a63;
+    --code-bg:#070c18;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a0f1c; --surface:#111a2e; --ink:#eef2fb; --muted:#9aa6c0; --line:#22304d;
+  --accent:#5b8dff; --accent-ink:#06102a; --accent-soft:#16254a; --warm:#ff8a63;
+  --code-bg:#070c18;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:800;margin-bottom:12px}
+p{margin:0 0 1em}
+.lede{color:var(--muted);max-width:60ch}
+section{padding:88px 0 0}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-style:normal;font-size:.95rem}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;font-size:.95rem;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--ink);background:var(--accent-soft)}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:1.05rem}
+@media(max-width:760px){nav{display:none}}
+
+/* hero */
+.hero{padding-top:64px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+.status b{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+h1{font-size:clamp(2.8rem,6.4vw,5rem);font-weight:800;letter-spacing:-.035em}
+.role{font-family:var(--display);font-size:clamp(1.2rem,2.2vw,1.55rem);font-weight:500;color:var(--accent);margin:14px 0 20px}
+.hero p.lede{font-size:1.08rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.98rem;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+.socials{display:flex;gap:18px;flex-wrap:wrap;font-size:.95rem}
+.socials a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.socials a:hover{color:var(--ink);border-color:var(--accent)}
+
+/* code panel: the one memorable element */
+.panel{background:var(--code-bg);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(11,92,255,.45);border:1px solid rgba(255,255,255,.06)}
+.tabs{display:flex;gap:2px;padding:10px 10px 0;background:rgba(255,255,255,.03)}
+.tabs button{font-family:var(--mono);font-size:.82rem;color:var(--code-dim);background:none;border:0;padding:10px 14px;border-radius:10px 10px 0 0;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--code-bg);color:#fff}
+.pane{padding:22px 22px 26px;min-height:268px;font-family:var(--mono);font-size:.86rem;line-height:1.75;color:var(--code-ink);overflow-x:auto}
+.pane[hidden]{display:none}
+.pane pre{margin:0;white-space:pre}
+.c{color:var(--code-dim)} .k{color:var(--code-key)} .s{color:var(--code-str)} .v{color:var(--code-var)}
+.render{font-family:var(--body);color:var(--ink);background:var(--bg);border-radius:14px;padding:22px;border:1px solid var(--line);display:grid;gap:10px}
+.render .tag{font-size:.78rem;color:var(--accent);font-weight:600}
+.render h3{font-size:1.4rem}
+.render p{margin:0;color:var(--muted);font-size:.95rem}
+.render .chips{display:flex;gap:6px;flex-wrap:wrap}
+.hint{font-size:.8rem;color:var(--code-dim);margin:0 0 12px;font-family:var(--mono)}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+.stats div{padding:22px 24px;border-right:1px solid var(--line)}
+.stats div:last-child{border-right:0}
+.stats strong{display:block;font-family:var(--display);font-size:2rem;font-weight:800;letter-spacing:-.03em}
+.stats span{color:var(--muted);font-size:.92rem}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+.about h2{position:sticky;top:96px}
+@media(max-width:900px){.about{grid-template-columns:1fr;gap:12px}.about h2{position:static}}
+.facts{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px;color:var(--muted);font-size:.97rem}
+.facts li{display:flex;gap:12px}
+.facts b{color:var(--ink);min-width:96px;font-weight:600}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:32px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.skill h3{font-size:1.15rem;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.85rem;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+.skill.wide{grid-column:1/-1}
+@media(max-width:760px){.skills{grid-template-columns:1fr}}
+
+/* experience */
+.job{margin-top:32px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;border-left:5px solid var(--accent)}
+.job header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;margin-bottom:18px}
+.job h3{font-size:1.45rem}
+.job .meta{color:var(--muted);font-size:.95rem}
+.job ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 36px}
+.job li{position:relative;padding-left:22px;font-size:.97rem;color:var(--muted)}
+.job li::before{content:"";position:absolute;left:0;top:.7em;width:9px;height:2px;background:var(--warm)}
+@media(max-width:860px){.job ul{grid-template-columns:1fr}}
+
+/* projects */
+.projects{margin-top:32px;border-top:1px solid var(--line)}
+.proj{display:grid;grid-template-columns:200px 1fr auto;gap:12px 32px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
+.proj h3{font-size:1.3rem}
+.proj .who{color:var(--muted);font-size:.9rem;margin-top:6px}
+.proj p{color:var(--muted);margin-bottom:12px;font-size:.98rem}
+.proj ul{margin:0 0 14px;padding-left:18px;color:var(--muted);font-size:.95rem}
+.proj a.visit{white-space:nowrap;text-decoration:none;font-weight:600;color:var(--accent);border:1px solid var(--line);padding:8px 14px;border-radius:10px;background:var(--surface)}
+.proj a.visit:hover{border-color:var(--accent)}
+.chip.t{background:transparent;border:1px solid var(--line);color:var(--muted);font-family:var(--mono);font-size:.78rem}
+@media(max-width:860px){.proj{grid-template-columns:1fr}}
+
+/* education + contact */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{margin:0;color:var(--muted);font-size:.96rem}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.contact{margin-top:88px;background:var(--accent);color:var(--accent-ink);border-radius:24px;padding:56px 40px;text-align:left}
+.contact h2{color:inherit;max-width:16ch}
+.contact p{max-width:52ch;opacity:.92}
+.contact .btn{background:var(--accent-ink);color:var(--accent);border-color:transparent}
+.contact .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 45%,transparent)}
+footer{padding:40px 0 56px;color:var(--muted);font-size:.9rem;text-align:center}
+
+@media(prefers-reduced-motion:no-preference){
+  .hero .status,.hero h1,.hero .role,.hero p.lede,.hero .btns,.hero .socials{animation:rise .7s both cubic-bezier(.2,.7,.2,1)}
+  .hero h1{animation-delay:.08s}.hero .role{animation-delay:.16s}.hero p.lede{animation-delay:.24s}.hero .btns{animation-delay:.32s}.hero .socials{animation-delay:.4s}
+  .panel{animation:rise .9s .2s both cubic-bezier(.2,.7,.2,1)}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .btn{transition:transform .15s}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Akshay Kashyap, home"><i>AK</i> Akshay Kashyap</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme" id="theme" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="status"><b></b> Open to Drupal front-end roles</div>
+          <h1>Akshay Kashyap</h1>
+          <div class="role">Senior Drupal Front-End Developer</div>
+          <p class="lede">I build fast, accessible and pixel-perfect Drupal themes. Six years of turning Figma and Adobe XD designs into reusable Twig components for healthcare, research, education and non-profit teams.</p>
+          <div class="btns">
+            <a class="btn primary" href="Akshay_Kashyap_Resume.pdf" download>Download resume</a>
+            <a class="btn" href="mailto:akshay95kashyap@gmail.com">Send an email</a>
+          </div>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/akshay-kashayp-b5b66a91" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Akshaykashyap" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.drupal.org/u/akshay-kashyap" target="_blank" rel="noopener">Drupal.org</a>
+          </div>
+        </div>
+
+        <div class="panel" aria-label="Example of my work: Twig template, SCSS and rendered component">
+          <div class="tabs" role="tablist">
+            <button role="tab" id="t1" aria-selected="true" aria-controls="p1">card.html.twig</button>
+            <button role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">_card.scss</button>
+            <button role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1">Rendered</button>
+          </div>
+          <div class="pane" id="p1" role="tabpanel" aria-labelledby="t1"><pre><span class="c">{# One component, reused across projects #}</span>
+<span class="k">&lt;article</span> class=<span class="s">"card card--{{ <span class="v">type</span> }}"</span><span class="k">&gt;</span>
+  <span class="k">&lt;h3</span> class=<span class="s">"card__title"</span><span class="k">&gt;</span>{{ <span class="v">title</span> }}<span class="k">&lt;/h3&gt;</span>
+  {% <span class="k">if</span> <span class="v">content</span> %}
+    <span class="k">&lt;div</span> class=<span class="s">"card__body"</span><span class="k">&gt;</span>{{ <span class="v">content</span> }}<span class="k">&lt;/div&gt;</span>
+  {% <span class="k">endif</span> %}
+<span class="k">&lt;/article&gt;</span></pre></div>
+          <div class="pane" id="p2" role="tabpanel" aria-labelledby="t2" hidden><pre><span class="c">// BEM + mobile-first</span>
+<span class="k">.card</span> {
+  <span class="v">display</span>: grid;
+  <span class="v">gap</span>: <span class="s">$space-md</span>;
+  <span class="v">padding</span>: <span class="s">$space-lg</span>;
+
+  <span class="k">&amp;__title</span> { <span class="k">@include</span> fluid-type(1.25rem, 1.6rem); }
+
+  <span class="k">&amp;--featured</span> { <span class="v">border-color</span>: <span class="s">var(--accent)</span>; }
+
+  <span class="k">@include</span> breakpoint(md) { <span class="v">grid-template-columns</span>: 1fr 2fr; }
+}</pre></div>
+          <div class="pane" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+            <p class="hint">// what the browser shows</p>
+            <div class="render">
+              <span class="tag">Featured</span>
+              <h3>Responsive, accessible, reusable</h3>
+              <p>One Twig component, styled once in SCSS, ready for any Drupal 10 or 11 theme.</p>
+              <div class="chips"><span class="chip">Twig</span><span class="chip">SCSS</span><span class="chip">Pattern Lab</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div><strong>6+</strong><span>Years in front-end</span></div>
+        <div><strong>10+</strong><span>Drupal projects delivered</span></div>
+        <div><strong>~30%</strong><span>Less build time with reusable components</span></div>
+        <div><strong>D8 → D11</strong><span>Theme migrations</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <h2>About me</h2>
+      <div>
+        <p>I’m a Senior Drupal Front-End Developer at Gai Technology in Dharamshala, working on Drupal 8, 9, 10 and 11 as well as WordPress. I build custom themes from scratch, lead theme upgrades from Drupal 8 to 9, 10 and 11, and keep performance and accessibility at the centre of every release.</p>
+        <p>I’m at my best where design meets Drupal’s content model: Views, Layout Builder, Paragraphs and custom blocks, styled with Twig, SCSS and Pattern Lab so editors get flexible layouts and users get a fast, consistent interface.</p>
+        <p>I’ve led front-end delivery on HEAL Security, NISO and Collaboration, and I also contribute to the Drupal community through my Drupal.org profile.</p>
+        <ul class="facts">
+          <li><b>Location</b> Dharamshala, Himachal Pradesh, India</li>
+          <li><b>Languages</b> Hindi, English, Pahari</li>
+          <li><b>Education</b> BCA, Himachal Pradesh University</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="lede">The tools I use every day to ship Drupal front-ends.</p>
+      <div class="skills">
+        <div class="skill wide">
+          <h3>Drupal</h3>
+          <div class="chips"><span class="chip">Drupal 8/9/10/11</span><span class="chip">Custom theme development</span><span class="chip">Theme migration (8 to 9/10/11)</span><span class="chip">Twig</span><span class="chip">Views</span><span class="chip">Layout Builder</span><span class="chip">Paragraphs</span><span class="chip">Custom blocks</span><span class="chip">Site building</span><span class="chip">GraphQL API</span><span class="chip">Theme contribution</span></div>
+        </div>
+        <div class="skill">
+          <h3>Front-end</h3>
+          <div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">AJAX</span><span class="chip">SASS/SCSS</span><span class="chip">LESS</span><span class="chip">Bootstrap</span><span class="chip">TailwindCSS</span><span class="chip">Flexbox</span><span class="chip">CSS Grid</span><span class="chip">ReactJS (basic)</span><span class="chip">NextJS (basic)</span></div>
+        </div>
+        <div class="skill">
+          <h3>Practices</h3>
+          <div class="chips"><span class="chip">BEM</span><span class="chip">Atomic Design</span><span class="chip">Pattern Lab</span><span class="chip">Component-based design</span><span class="chip">Mobile-first</span><span class="chip">Web accessibility</span><span class="chip">Cross-browser testing</span><span class="chip">Figma to HTML</span></div>
+        </div>
+        <div class="skill">
+          <h3>Tools</h3>
+          <div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Bitbucket</span><span class="chip">Jira</span><span class="chip">Confluence</span><span class="chip">Redmine</span><span class="chip">DDEV</span><span class="chip">Lando</span><span class="chip">XAMPP</span><span class="chip">WordPress</span><span class="chip">PHP and MySQL (basic)</span></div>
+        </div>
+        <div class="skill">
+          <h3>AI tools</h3>
+          <div class="chips"><span class="chip">ChatGPT</span><span class="chip">Claude</span><span class="chip">GitHub Copilot</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <article class="job">
+        <header>
+          <div>
+            <h3>Senior Drupal Front-End Developer</h3>
+            <div class="meta">Gai Technology, Dharamshala, India</div>
+          </div>
+          <div class="meta">Jul 2020 – Present</div>
+        </header>
+        <ul>
+          <li>Build responsive, cross-browser UIs with HTML5, CSS3, JavaScript, SCSS and Twig for Drupal 8/9/10 and WordPress websites.</li>
+          <li>Create custom Drupal themes from scratch and lead theme upgrades and migrations from Drupal 8 to 9/10, focused on performance and accessibility.</li>
+          <li>Convert Figma and Adobe XD designs into scalable, accessible code; implemented Pattern Lab in Drupal 10 projects for design consistency.</li>
+          <li>Structure dynamic content with Views, Layout Builder, Paragraphs and custom blocks, and integrate GraphQL APIs for dynamic rendering.</li>
+          <li>Led front-end development of HEAL Security and NISO (Drupal 10) with emphasis on performance, responsive design and flexible content.</li>
+          <li>Delivered 10+ Drupal websites on tight deadlines, several in a lead role, alongside designers, backend developers and content teams.</li>
+          <li>Improved page load times and UI responsiveness by optimising code, reducing dependencies and applying asset-delivery best practices.</li>
+          <li>Built modular, reusable components shared across projects, reducing development time by about 30%.</li>
+          <li>Handle monthly maintenance and security updates for CARE India and Alfaisal University.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Selected projects</h2>
+      <p class="lede">A mix of lead and contributing front-end roles across healthcare, research, education and non-profit sites.</p>
+      <div class="projects">
+
+        <article class="proj">
+          <div><h3>HEAL Security</h3><div class="who">Front-End Developer · 2 years · Drupal 9</div></div>
+          <div>
+            <p>Cybersecurity intelligence dashboard for healthcare security teams.</p>
+            <ul><li>Custom Bootstrap-based theme with custom Twig templates and site-wide theming.</li><li>Integrated GraphQL API and drag-and-drop functionality.</li><li>Special pages with different sidebars and headers, plus listing, slideshow and picture block styles.</li></ul>
+            <div class="chips"><span class="chip t">Drupal 9</span><span class="chip t">Twig</span><span class="chip t">SCSS</span><span class="chip t">jQuery</span><span class="chip t">DDEV</span></div>
+          </div>
+          <a class="visit" href="https://demo.healsecurity.net" target="_blank" rel="noopener">Visit site</a>
+        </article>
+
+        <article class="proj">
+          <div><h3>NISO</h3><div class="who">Lead Front-End Developer · 1 month · Drupal 10</div></div>
+          <div>
+            <p>Information-standards organisation serving libraries, publishers and vendors.</p>
+            <ul><li>Led front-end delivery of a fully responsive, cross-browser site.</li><li>Moved styling and output from Pattern Lab to Twig templates; built custom header and footer blocks.</li></ul>
+            <div class="chips"><span class="chip t">Drupal 10</span><span class="chip t">Twig</span><span class="chip t">SCSS</span><span class="chip t">Pattern Lab</span></div>
+          </div>
+          <a class="visit" href="https://niso.org" target="_blank" rel="noopener">Visit site</a>
+        </article>
+
+        <article class="proj">
+          <div><h3>Collaboration</h3><div class="who">Lead Front-End Developer · 1.5 years · Drupal 8</div></div>
+          <div>
+            <p>Platform for talents, companies and organisations to share content and join events and projects.</p>
+            <ul><li>Custom Bootstrap-based theme with a customised Views slideshow and modal boxes.</li><li>Responsive media pop-ups (video, images, text) and jQuery sliders; used the Features module for deployment.</li></ul>
+            <div class="chips"><span class="chip t">Drupal 8</span><span class="chip t">Twig</span><span class="chip t">jQuery</span><span class="chip t">SCSS</span></div>
+          </div>
+          <a class="visit" href="https://5xpressions.art" target="_blank" rel="noopener">Visit site</a>
+        </article>
+
+        <article class="proj">
+          <div><h3>TII, Abu Dhabi</h3><div class="who">Front-End Developer · 6 months · Drupal 8</div></div>
+          <div>
+            <p>Technology Innovation Institute, a leading applied-research centre in Abu Dhabi, UAE.</p>
+            <ul><li>Paragraph layouts with custom templates and view modes; Bootstrap-based theme with Grid and Flexbox layouts.</li></ul>
+            <div class="chips"><span class="chip t">Drupal 8</span><span class="chip t">Twig</span><span class="chip t">SCSS</span><span class="chip t">Bitbucket</span></div>
+          </div>
+          <a class="visit" href="https://tii.ae" target="_blank" rel="noopener">Visit site</a>
+        </article>
+
+        <article class="proj">
+          <div><h3>Sesame Workshop India</h3><div class="who">Front-End Developer · 6 months · Drupal 9</div></div>
+          <div>
+            <p>The non-profit behind Sesame Street.</p>
+            <ul><li>Bootstrap-based custom theme with customised Views templates, content types and custom blocks; added jQuery pop-ups, tooltips and animations.</li></ul>
+            <div class="chips"><span class="chip t">Drupal 9</span><span class="chip t">Twig</span><span class="chip t">jQuery</span><span class="chip t">SCSS</span></div>
+          </div>
+          <a class="visit" href="https://sesameworkshopindia.org" target="_blank" rel="noopener">Visit site</a>
+        </article>
+
+        <article class="proj">
+          <div><h3>Cellworks</h3><div class="who">Front-End Developer · 6 months · Drupal 9</div></div>
+          <div>
+            <p>AI-enhanced precision oncology and drug development company.</p>
+            <ul><li>Custom theme on stable9 with Paragraph layouts, custom templates and the Bootstrap grid system.</li></ul>
+            <div class="chips"><span class="chip t">Drupal 9</span><span class="chip t">Twig</span><span class="chip t">jQuery</span><span class="chip t">SCSS</span></div>
+          </div>
+          <a class="visit" href="https://cellworks.life" target="_blank" rel="noopener">Visit site</a>
+        </article>
+
+        <article class="proj">
+          <div><h3>ARBS</h3><div class="who">Front-End Developer · 1 year · Drupal 8</div></div>
+          <div>
+            <p>Smart energy, water and gas metering solutions platform.</p>
+            <ul><li>Custom theme on Classy with responsive tables (DataTables), jQuery pop-ups and customised Views templates.</li></ul>
+            <div class="chips"><span class="chip t">Drupal 8</span><span class="chip t">Twig</span><span class="chip t">SCSS</span><span class="chip t">DDEV</span></div>
+          </div>
+          <span></span>
+        </article>
+
+        <article class="proj">
+          <div><h3>Alfaisal University and CARE India</h3><div class="who">Maintenance Developer · Ongoing · Drupal 8</div></div>
+          <div>
+            <p>Academic site with OpenScholar integration, plus a non-profit site maintained for 3 consecutive years.</p>
+            <ul><li>Built separate themes and faculty profile pages for each faculty; handled module security updates and monthly maintenance.</li></ul>
+            <div class="chips"><span class="chip t">Drupal 8</span><span class="chip t">Twig</span><span class="chip t">SCSS</span></div>
+          </div>
+          <span></span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="two">
+        <div class="card"><h3>Bachelor of Computer Applications (BCA)</h3><p>Govt. Degree College Dharamshala, Himachal Pradesh University, Shimla · 2015</p></div>
+        <div class="card"><h3>Languages</h3><p>Hindi (advanced), English (professional working), Pahari (native)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <h2>Let’s build something together</h2>
+        <p>I’m looking for my next Drupal front-end role. If you have a theme to build, a migration to lead or a design to bring to life, I’d like to hear from you.</p>
+        <div class="btns">
+          <a class="btn" href="mailto:akshay95kashyap@gmail.com">akshay95kashyap@gmail.com</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/akshay-kashayp-b5b66a91" target="_blank" rel="noopener">Message on LinkedIn</a>
+          <a class="btn ghost" href="Akshay_Kashyap_Resume.pdf" download>Download resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Akshay Kashyap · Dharamshala, India</footer>
+
+<script>
+(function(){
+  /* tabs */
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(t){
+    tabs.forEach(function(x){
+      var on=x===t;
+      x.setAttribute('aria-selected',on);
+      x.tabIndex=on?0:-1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    });
+    t.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(t)});
+    t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight')select(tabs[(i+1)%tabs.length]);
+      if(e.key==='ArrowLeft')select(tabs[(i+tabs.length-1)%tabs.length]);
+    });
+  });
+  /* theme toggle */
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var saved=localStorage.getItem('theme');if(saved)root.setAttribute('data-theme',saved);}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
